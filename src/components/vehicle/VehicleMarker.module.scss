@@ -1,0 +1,9 @@
+@import "../../styles/main";
+
+:global(.popup .leaflet-popup-content-wrapper) {
+  background-color: $color-grey-dark;
+}
+
+:global(.leaflet-popup-tip-container) {
+  visibility: hidden;
+}

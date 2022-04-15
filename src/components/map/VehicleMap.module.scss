@@ -1,0 +1,14 @@
+@import "../../styles/main";
+
+.actions {
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: $color-pri-3;
+	background-color: $color-grey-dark;
+
+	& > * {
+		margin: 1rem;
+	}
+}

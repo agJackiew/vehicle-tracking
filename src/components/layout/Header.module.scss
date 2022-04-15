@@ -1,0 +1,23 @@
+@import "../../styles/main";
+
+.header {
+	@include centerX;
+	height: 8rem;
+	background: $color-black;
+	color: $color-white;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	box-shadow: 0 0 2rem .4rem rgba($color-pri-3, .7);
+
+	@media all and (max-width: 767px) {
+		height: 6rem;
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		font-weight: 400;
+		letter-spacing: 1.4rem;
+		margin-left: 1.5rem;
+		text-align: center;
+	}
+}

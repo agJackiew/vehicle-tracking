@@ -1,0 +1,26 @@
+@mixin centerY {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin centerX {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin startY {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@mixin spaceBetweenX {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}

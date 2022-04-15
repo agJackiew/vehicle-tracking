@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@100;200;300;400;700&display=swap');
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  letter-spacing: .16rem;
+}
+
+body {
+  margin: 0;
+}
