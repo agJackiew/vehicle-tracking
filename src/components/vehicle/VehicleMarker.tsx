@@ -17,7 +17,7 @@ const VehicleMarker: FC<propsType> = (props) => {
 	const [location, setLocation] = useState<[number, number]>([props.item.location.latitude, props.item.location.longitude]);
 	const [status, setStatus] = useState(props.item.status.toString() === "AVAILABLE" ? true : false);
 
-	const s = (!props.hidden || (props.item.batteryLevelPct < props.minBattery)) ? 0 : 30;
+	const s = ((props.hidden && !status) || (props.item.batteryLevelPct < props.minBattery)) ? 0 : 30;
 	const iconGreen = L.icon({
 		iconUrl: require("../../assets/icons/car-green.png"),
 		iconSize: [s, s],
@@ -31,7 +31,7 @@ const VehicleMarker: FC<propsType> = (props) => {
 	})
 
 	return (
-	  <Marker position={location} icon={status ? iconGreen : iconRed} >
+	  <Marker position={location} icon={status ? iconGreen : iconRed}>
 	    <Popup className="popup">
 		    <VehiclePopup id={props.item.id} />
 	    </Popup>

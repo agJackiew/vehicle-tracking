@@ -11,7 +11,7 @@ const VehicleMap: FC = (props) => {
 	const [vehicles, setVehicles] = useState<VehicleType[]>([]);
 	const [error, setError] = useState('');
 	const [minBattery, setMinBattery] = useState('');
-	const [isHidden, setIsHidden] = useState(true);
+	const [isHidden, setIsHidden] = useState(false);
 
 	const urlCars = 'https://android.jrotor.com/api/map?objectType=VEHICLE';
 
