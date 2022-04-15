@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Vehicle map visualization
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features: 
+* visualization vehicles on map
+* clustering on zoom
+* filtering by status and battery level
+* visualization of vehicle's details
 
 ## Available Scripts
 
