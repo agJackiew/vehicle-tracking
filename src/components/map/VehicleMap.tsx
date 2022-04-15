@@ -11,7 +11,7 @@ const VehicleMap: FC = (props) => {
 	const [vehicles, setVehicles] = useState<VehicleType[]>([]);
 	const [error, setError] = useState('');
 	const [minBattery, setMinBattery] = useState('');
-	const [isHidden, setIsHidden] = useState(false);
+	const [isHidden, setIsHidden] = useState(true);
 
 	const urlCars = 'https://android.jrotor.com/api/map?objectType=VEHICLE';
 
@@ -52,7 +52,7 @@ const VehicleMap: FC = (props) => {
 		<div>
 			<div className={styles.actions}>
 				<label htmlFor="available">Available only</label>
-				<input id="available" type="checkbox"  onChange={filterAvailableHandler}/>
+				<input id="available" type="checkbox" checked={isHidden} onChange={filterAvailableHandler}/>
 				<label htmlFor="batteryLv">Min battery level</label>
 				<input 
 					id="batteryLv" 
