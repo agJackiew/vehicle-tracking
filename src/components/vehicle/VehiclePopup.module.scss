@@ -8,7 +8,7 @@
 	border-radius: 8px;
 	margin: 1.5rem 0;
 
-  	@media all and (max-width: 724px) {
+  	@media all and (max-width: 768px) {
 	    max-width: 25rem;
 	    margin: 0;
 	    padding: 0;
@@ -23,7 +23,7 @@
 		padding-bottom: 1rem;
 		margin-top: .5rem;
 
-		@media all and (max-width: 724px) {
+		@media all and (max-width: 768px) {
 		    font-size: 1.2rem;
 		}
 	}
@@ -50,7 +50,7 @@
 		font-weight: bold;
 		padding: .3rem 0 0 .3rem;
 
-		@media all and (max-width: 724px) {
+		@media all and (max-width: 768px) {
 		    font-size: 1.2rem;
 		}
 	}
@@ -73,7 +73,7 @@
 			text-transform: uppercase;
 			color: $color-pri-3;
 
-			@media all and (max-width: 724px) {
+			@media all and (max-width: 768px) {
 			    font-size: 1rem;
 			}
 		}
@@ -85,7 +85,7 @@
 		text-transform: none;
 		color: $color-grey-light;
 
-		@media all and (max-width: 724px) {
+		@media all and (max-width: 768px) {
 		    font-size: .9rem;
 		}
 	}

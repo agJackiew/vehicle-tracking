@@ -2,6 +2,9 @@
 
 .app {
 	min-height: 100vh;
-	background-image: linear-gradient(to bottom, rgba($color-grey-dark, .7), rgba($color-grey-dark, .6)), url(./assets/earth.jpg);
-	background-size: cover;
+	display: flex;
+
+	@media all and (max-width: 767px) {
+		@include centerY;
+	}
 }

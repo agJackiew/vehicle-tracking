@@ -1,12 +1,19 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './VehicleMap.module.scss';
 import VehicleMarker from '../vehicle/VehicleMarker';
 import { VehicleType } from '../../types/types';
 
-const VehicleMap: FC = (props) => {
+type propsType = {
+	showFilters: boolean
+}
+
+const VehicleMap: FC<propsType> = (props) => {
 
 	const [vehicles, setVehicles] = useState<VehicleType[]>([]);
 	const [error, setError] = useState('');
@@ -42,31 +49,39 @@ const VehicleMap: FC = (props) => {
 	const changeBatteryLvHandler: React.ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
 		setMinBattery(event.target.value);
 	}, [])
-;
 
-	const filterAvailableHandler: React.ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
- 		setIsHidden(event.target.checked);
-  	}, [])
+  	const filterAvailableHandler = () => {
+  		setIsHidden(current => !current);
+  	}
 
 	return (
-		<div>
-			<div className={styles.actions}>
-				<label htmlFor="available">Available only</label>
-				<input id="available" type="checkbox" checked={isHidden} onChange={filterAvailableHandler}/>
-				<label htmlFor="batteryLv">Min battery level</label>
-				<input 
-					id="batteryLv" 
-					type="number" 
-					min="0"
-					max="100"
-					value={minBattery}
-					onChange={changeBatteryLvHandler} 
-				/>
+		<div className={styles.map}>
+			<div className={`${styles.filters} ${props.showFilters ? styles.animatedIn : styles.animatedOut}`}>
+				<div className={styles.filters__filter}>
+					<label htmlFor="available">Available only</label>
+					<span className={styles.filters__icon}>
+						<FontAwesomeIcon 
+							icon={isHidden ? faCircleCheck : faCircleXmark} 
+							color={isHidden ? '#B2EA70' : '#F9975D'}
+							onClick={filterAvailableHandler}/>
+					</span>
+				</div>
+				<div className={styles.filters__filter}>
+					<label htmlFor="batteryLv">With battery level greater than</label>
+					<input 
+						id="batteryLv" 
+						type="number" 
+						min="0"
+						max="100"
+						className={styles.filters__input}
+						value={minBattery}
+						onChange={changeBatteryLvHandler} />
+				</div>		
 			</div>
 			<MapContainer 
 				center={[52.193829425325, 20.929869743200268]} 
 				zoom={18} 
-				style={{ height:'80vh' }}
+				style={{ height:'100vh' }}
             	className='markercluster-map'
 			>
 				<TileLayer

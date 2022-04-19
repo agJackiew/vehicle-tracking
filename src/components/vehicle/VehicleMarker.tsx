@@ -30,8 +30,12 @@ const VehicleMarker: FC<propsType> = (props) => {
 		popupAnchor:  [0, -15],
 	})
 
+	const onClick = () => {
+		setStatus(status => !status)
+	}
+
 	return (
-	  <Marker position={location} icon={status ? iconGreen : iconRed}>
+	  <Marker position={location} icon={status ? iconGreen : iconRed} eventHandlers={{ click: onClick }}>
 	    <Popup className="popup">
 		    <VehiclePopup id={props.item.id} />
 	    </Popup>

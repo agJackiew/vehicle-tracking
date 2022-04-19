@@ -3,12 +3,16 @@ import React, { FC } from 'react';
 import styles from './Main.module.scss';
 import VehicleMap from '../map/VehicleMap';
 
-const Main: FC = (props) => {
+type propsType = {
+	showFilters: boolean
+}
+
+const Main: FC<propsType> = (props) => {
 
 	return (
 		<section className={styles.main}>
-			<div className={styles.map}>
-				<VehicleMap />
+			<div className={styles['map-container']}>
+				<VehicleMap showFilters={props.showFilters}/>
 			</div>	
 		</section>
 	);	

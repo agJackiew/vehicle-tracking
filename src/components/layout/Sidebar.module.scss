@@ -1,0 +1,75 @@
+@import "../../styles/main";
+
+.sidebar {
+	@include startY;
+	min-width: 20rem;
+	background: $color-black;
+	color: $color-white;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	box-shadow: 0 0 2rem .4rem rgba($color-pri-3, .7);
+	padding: 0 2rem;
+
+	&__heading {
+		@include spaceAroundX;
+	}
+
+	&__logo {
+		width: 3.2rem;
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		font-weight: 400;
+		letter-spacing: 1.4rem;
+		line-height: 2.5rem;
+		margin-top: 2rem;
+		margin-left: 1.5rem;
+		padding-bottom: .6rem;
+		text-align: center;
+		border-bottom: 1px solid $color-pri-3;
+	}
+
+	&__icon {
+		display: none;
+	}
+
+	&__btn {
+		@include centerX;
+		margin-top: calc(100vh - 36rem);	
+		margin-bottom: 3rem;
+
+		& > * {
+			width: 20rem;
+		}
+	}
+
+	&__image {
+		margin: 2rem 0;
+		animation: fadeIn .5s;
+
+		img {
+			width: 26rem;
+		}
+		
+	}
+
+	@media all and (max-width: 768px) {
+		@include spaceBetweenX;
+		height: 6rem;
+		width: 100%;
+		padding: 1rem 2rem 1rem 1.3rem;
+
+		&__icon {
+			display: flex;
+			align-items: center;
+			font-size: 2rem;
+		}
+
+		&__btn,
+		&__image,
+		&__title {
+			display: none;
+		}
+	}
+}

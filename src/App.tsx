@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
 
 import styles from './App.module.scss';
-import Header from './components/layout/Header';
+import Sidebar from './components/layout/Sidebar';
 import Main from './components/layout/Main';
 
-function App() {
+const App: FC = (props) => {
+
+  const [showFilters, setShowFilters] = useState(false);
+
+  const showFiltersHandler = () => {
+    setShowFilters(current => !current);
+  }
   return (
     <section className={styles.app}>
-      <Header />
-      <Main />
+      <Sidebar onShow={showFiltersHandler}/>
+      <Main showFilters={showFilters}/>
     </section>
   );
 }

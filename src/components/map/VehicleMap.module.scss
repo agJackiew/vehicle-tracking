@@ -1,14 +1,85 @@
 @import "../../styles/main";
 
-.actions {
-	display: flex;
-	align-items: center;
-	font-size: 1.2rem;
+.map {
+	position: relative;
+	border: 3px solid $color-black;
+}
+
+.animatedIn {
+	animation: fadeRightIn .3s ease-out;
+	opacity: 1;
+}
+
+.animatedOut {
+	animation: fadeRightOut .3s ease-out;
+	opacity: 0;
+}
+
+.filters {
+	position: absolute;
+	top: 1.5rem;
+	left: 8rem;
+	z-index: 10000;
+	@include spaceAroundX;
+	font-size: 1.3rem;
 	text-transform: uppercase;
 	color: $color-pri-3;
 	background-color: $color-grey-dark;
+	padding: 1rem .5rem;
+	border-radius: 24px;	
 
-	& > * {
-		margin: 1rem;
+	&__filter {
+		@include centerX;
+		margin: 0 1rem;
+		text-align: center;
+
+		label {
+			margin: 0 .5rem;
+		}
+
+		@media all and (max-width: 768px) {
+			@include centerY;
+			margin: .5rem 1rem;
+		}
+	}	
+
+	&__icon {
+		font-size: 2rem;
+		margin: .5rem;	
+		width: 2rem;
+	}
+
+	&__input {
+		border-radius: 18px;
+		border: none;
+		width: 6rem;
+		text-indent: 1.8rem;
+		background-color: $color-grey-light;
+		color: $color-grey-dark;
+		font-size: 1.5rem;
+		font-weight: bolder;
+
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
+		}
+
+		@media all and (max-width: 768px) {
+			margin-top: 1rem;
+		}
+	}
+
+	@media all and (max-width: 768px) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-left: auto;
+		@include centerY;
+		font-size: 1.1rem;
+		width: 10rem;
+		border-radius: 0;
+		border-bottom-left-radius: 12px;
 	}
 }
+
