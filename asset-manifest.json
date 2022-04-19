@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vehicle-tracking/static/css/main.239fd9ac.css",
+    "main.css": "/vehicle-tracking/static/css/main.622fc022.css",
     "main.js": "/vehicle-tracking/static/js/main.643f04fa.js",
     "static/js/787.b2236dfc.chunk.js": "/vehicle-tracking/static/js/787.b2236dfc.chunk.js",
     "static/media/car-img4.jpg": "/vehicle-tracking/static/media/car-img4.3881a6f5edd0f9599cd4.jpg",
@@ -8,12 +8,12 @@
     "static/media/car-red.png": "/vehicle-tracking/static/media/car-red.47e30b1e2d40bba99676.png",
     "static/media/car-green.png": "/vehicle-tracking/static/media/car-green.2b51a66fa12f75fd7936.png",
     "index.html": "/vehicle-tracking/index.html",
-    "main.239fd9ac.css.map": "/vehicle-tracking/static/css/main.239fd9ac.css.map",
+    "main.622fc022.css.map": "/vehicle-tracking/static/css/main.622fc022.css.map",
     "main.643f04fa.js.map": "/vehicle-tracking/static/js/main.643f04fa.js.map",
     "787.b2236dfc.chunk.js.map": "/vehicle-tracking/static/js/787.b2236dfc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.239fd9ac.css",
+    "static/css/main.622fc022.css",
     "static/js/main.643f04fa.js"
   ]
 }
