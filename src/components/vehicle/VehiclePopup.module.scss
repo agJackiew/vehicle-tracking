@@ -81,6 +81,10 @@
 	&__status {
 		width: 20rem;
 		text-align: left;
+
+		@media all and (max-width: 768px) {
+			width: 15rem;
+		}
 	}
 
 	&__reserve {
