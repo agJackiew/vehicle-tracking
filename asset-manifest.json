@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/vehicle-tracking/static/css/main.12947121.css",
-    "main.js": "/vehicle-tracking/static/js/main.cdd47332.js",
+    "main.css": "/vehicle-tracking/static/css/main.9c2c01dd.css",
+    "main.js": "/vehicle-tracking/static/js/main.d21a858b.js",
     "static/js/787.b2236dfc.chunk.js": "/vehicle-tracking/static/js/787.b2236dfc.chunk.js",
-    "static/media/earth.jpg": "/vehicle-tracking/static/media/earth.be2eb220212a66396811.jpg",
+    "static/media/car-img4.jpg": "/vehicle-tracking/static/media/car-img4.3881a6f5edd0f9599cd4.jpg",
+    "static/media/car-orange.png": "/vehicle-tracking/static/media/car-orange.e51c506981d4d2f575df.png",
     "static/media/car-red.png": "/vehicle-tracking/static/media/car-red.47e30b1e2d40bba99676.png",
     "static/media/car-green.png": "/vehicle-tracking/static/media/car-green.2b51a66fa12f75fd7936.png",
     "index.html": "/vehicle-tracking/index.html",
-    "main.12947121.css.map": "/vehicle-tracking/static/css/main.12947121.css.map",
-    "main.cdd47332.js.map": "/vehicle-tracking/static/js/main.cdd47332.js.map",
+    "main.9c2c01dd.css.map": "/vehicle-tracking/static/css/main.9c2c01dd.css.map",
+    "main.d21a858b.js.map": "/vehicle-tracking/static/js/main.d21a858b.js.map",
     "787.b2236dfc.chunk.js.map": "/vehicle-tracking/static/js/787.b2236dfc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12947121.css",
-    "static/js/main.cdd47332.js"
+    "static/css/main.9c2c01dd.css",
+    "static/js/main.d21a858b.js"
   ]
 }
