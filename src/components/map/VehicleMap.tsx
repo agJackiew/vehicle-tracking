@@ -25,7 +25,13 @@ const VehicleMap: FC<propsType> = (props) => {
 	const fetchDataHandler = async () => {
 
 		try {
-			const response = await fetch(urlCars);
+			const response = await fetch(urlCars, {
+				method: 'GET',
+				mode: 'no-cors',
+				headers: {
+			      'Content-Type': 'application/json'
+			    }
+			});
 
 			if (!response.ok) {
 				throw new Error('Fetching data failed');
