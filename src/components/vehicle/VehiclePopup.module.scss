@@ -67,15 +67,29 @@
 		padding: 1rem 0;
 
 		& > * {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: bolder;	
 			padding: .3rem;
 			text-transform: uppercase;
-			color: $color-pri-3;
-
+		
 			@media all and (max-width: 768px) {
 			    font-size: 1rem;
 			}
+		}
+	}
+
+	&__status {
+		width: 20rem;
+		text-align: left;
+	}
+
+	&__reserve {
+		margin-top: 1rem;
+
+		& > * {
+			font-size: 1.1rem;
+			font-weight: bolder;	
+			padding: .3rem 1rem; 
 		}
 	}
 

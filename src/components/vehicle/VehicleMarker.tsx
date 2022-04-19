@@ -15,29 +15,30 @@ type propsType = {
 const VehicleMarker: FC<propsType> = (props) => {	
 
 	const [location, setLocation] = useState<[number, number]>([props.item.location.latitude, props.item.location.longitude]);
-	const [status, setStatus] = useState(props.item.status.toString() === "AVAILABLE" ? true : false);
+	const [status, setStatus] = useState(props.item.status.toString() === 'AVAILABLE' ?
+	 {value: true, label: 'AVAILABLE'} : {value: false, label: 'NOT AVAILABLE'});
 
-	const s = ((props.hidden && !status) || (props.item.batteryLevelPct < props.minBattery)) ? 0 : 30;
+	const size = ((props.hidden && !status.value) || (props.item.batteryLevelPct < props.minBattery)) ? 0 : 30;
 	const iconGreen = L.icon({
 		iconUrl: require("../../assets/icons/car-green.png"),
-		iconSize: [s, s],
+		iconSize: [size, size],
 		popupAnchor:  [0, -15],
 	})
 
 	const iconRed = L.icon({
 		iconUrl: require("../../assets/icons/car-red.png"),
-		iconSize: [s, s],
+		iconSize: [size, size],
 		popupAnchor:  [0, -15],
 	})
 
-	const onClick = () => {
-		setStatus(status => !status)
+	const onStatusChange = () => {
+		setStatus(status.value ? {value: false, label: 'NOT AVAILABLE'} : {value: true, label: 'AVAILABLE'})
 	}
 
 	return (
-	  <Marker position={location} icon={status ? iconGreen : iconRed} eventHandlers={{ click: onClick }}>
+	  <Marker position={location} icon={status.value ? iconGreen : iconRed}>
 	    <Popup className="popup">
-		    <VehiclePopup id={props.item.id} />
+		    <VehiclePopup id={props.item.id} onReserve={onStatusChange} status={status} />
 	    </Popup>
 	  </Marker>
 	);

@@ -1,9 +1,16 @@
 import React, { FC, Fragment, useEffect, useState } from 'react';
 
 import styles from './VehiclePopup.module.scss';
+import Button from '../ui/Button';
 import { VehicleType } from '../../types/types';
 
-const VehiclePopup:FC<{id: string}> = (props) => {	
+type propsType = { 
+	id: string,
+	onReserve: () => void,
+	status: { value: boolean, label: string }
+}
+
+const VehiclePopup:FC<propsType> = (props) => {	
 
 	const [details, setDetails] = useState<VehicleType | undefined>(undefined);
 	const [error, setError] = useState({
@@ -11,8 +18,8 @@ const VehiclePopup:FC<{id: string}> = (props) => {
 		message: ''
 	});
 
-	const vehicleUrl = "https://android.jrotor.com/api/vehicles/" + props.id
-	const pictureUrl = "https://android.jrotor.com/api/attachments/" + details?.picture.id;
+	const vehicleUrl = 'https://android.jrotor.com/api/vehicles/' + props.id
+	const pictureUrl = 'https://android.jrotor.com/api/attachments/' + details?.picture.id;
 
 	const fetchDetails = async () => {
 		try {
@@ -25,7 +32,7 @@ const VehiclePopup:FC<{id: string}> = (props) => {
 			const data = await response.json();	
 			setDetails(data);
 		} catch (error: any) {
-			setError({isError: true, message: "Oops, something went wrong..."});
+			setError({isError: true, message: 'Oops, something went wrong...'});
 		}
 	};
 
@@ -39,7 +46,7 @@ const VehiclePopup:FC<{id: string}> = (props) => {
 				<div className={styles.popup}>
 					<div className={styles.popup__title}>Details</div>
 					<figure>
-						<img className={styles.popup__img} src={pictureUrl} alt="" />
+						<img className={styles.popup__img} src={pictureUrl} alt='' />
 					</figure>
 				    <div className={styles.popup__name}>
 						<div className={styles.popup__brand}>{details?.brand}</div>
@@ -54,12 +61,15 @@ const VehiclePopup:FC<{id: string}> = (props) => {
 					<div className={styles.popup__spec}>
 						<div className={styles.popup__status}>
 							<span>Status: </span>
-							{details?.status}
+							{props.status.label}
 						</div>
 						<div className={styles.popup__batLv}>
 							<span>Battery: </span>
 							{details?.batteryLevelPct}
 						</div>
+					</div>
+					<div className={styles.popup__reserve}>
+						<Button type='button' text={props.status.value ? 'Book' : 'Unbook'} onClick={props.onReserve} />
 					</div>
 				</div> :
 				<div className={styles.error}>{error.message}</div>}
